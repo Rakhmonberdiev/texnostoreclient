@@ -1,0 +1,14 @@
+<header>
+    <span *ngIf="totalCount&&totalCount>0">Показаны 
+      <strong>
+        {{(pageNumber-1)*pageSize+1}} -
+        {{pageNumber*pageSize
+        >this.totalCount
+        ?this.totalCount
+        :pageNumber*pageSize
+        }}
+      </strong> из<strong>{{this.totalCount}}</strong> результатов</span>
+      <span *ngIf="totalCount===0">
+        По этому фильтру <strong>0</strong> результатов
+      </span>
+   </header>
