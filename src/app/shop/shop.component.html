@@ -39,9 +39,9 @@
           >
           </app-paging-header>
            <div class="d-flex align-items-center">
-            <input class="form-control mr-sm-2 me-1" style="width: 300px;" placeholder="Поиск" type="text">
-            <button class="btn btn-outline-primary me-1">Поиск</button>
-            <button class="btn btn-outline-success me-1">Сброс</button>
+            <input class="form-control mr-sm-2 me-1" #search style="width: 300px;" placeholder="Поиск" type="text">
+            <button (click)="onSearch()" class="btn btn-outline-primary me-1">Поиск</button>
+            <button (click)="onReset()" class="btn btn-outline-success me-1">Сброс</button>
            </div>
     </div>
 
