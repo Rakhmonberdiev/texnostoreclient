@@ -10,21 +10,12 @@
   </select>
 <br/>
     <h5 class="text-secondary ml-3">Бренды</h5>
-
     <ul class="list-group ml-3">
-        <li class="list-group-item active" aria-current="true">An active item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
+        <li class="list-group-item" *ngFor="let brand of brands">{{brand.name}}</li>
         <br/>
         <h5 class="text-secondary ml-3">Товары</h5>
         <ul class="list-group ml-3">
-            <li class="list-group-item active" aria-current="true">An active item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A fourth item</li>
-            <li class="list-group-item">And a fifth one</li>
+            <li class="list-group-item" *ngFor="let type of types">{{type.name}}</li>
         </ul>
       </ul>
 </section>
@@ -41,8 +32,8 @@
     </div>
 
     <div class="row">
-        <div class="col-4" *ngFor="let product of products">
-         <app-product-item></app-product-item>
+        <div class="col-4" *ngFor="let item of products">
+         <app-product-item [product] = "item"></app-product-item>
         </div>
       </div>
 
@@ -50,12 +41,3 @@
 </section>
 </div>
 </div>
-
-
-
-<ul>
-    <li class="list-unstyled" *ngFor="let product of products">
-        {{product.name}}
-
-    </li>
-</ul>
