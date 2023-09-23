@@ -3,10 +3,11 @@
 <section class="col-3">
   <h5 class="text-secondary ml-3" >Сортировать</h5>
 
-  <select class="form-select" aria-label=".form-select-sm example">
-    <option selected>Алфавитный порядок</option>
-    <option>Цена: от низкой до высокой</option>
-    <option>Цена: от высокой к низкой</option>
+  <select class="form-select" aria-label=".form-select-sm example" (change)="onSortSelected($event.target.value)">
+    <option *ngFor="let sort of sortOptions" [value] = "sort.value">
+        {{sort.name}}
+    </option>
+
   </select>
 <br/>
     <h5 class="text-secondary ml-3">Бренды</h5>

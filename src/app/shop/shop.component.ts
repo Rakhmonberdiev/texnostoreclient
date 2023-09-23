@@ -15,6 +15,13 @@ brands: IBrand[];
 types: IType[];
 brandIdSelected = 0;
 typeIdSelected = 0;
+sortSelected ='name';
+sortOptions = [
+  {name: 'Алфавитный порядок',value:'name'},
+  {name: 'Цена: от низкой до высокой', value: 'priceAsc'},
+  {name: 'Цена: от высокой к низкой', value: 'priceDesc'}
+]
+
 constructor(private shopService: ShopService){}
 
 ngOnInit(): void {
@@ -23,7 +30,7 @@ this.getBrand();
 this.getType();
 }
 getProduct(){
-  this.shopService.getProducts(this.brandIdSelected, this.typeIdSelected).subscribe(response =>{
+  this.shopService.getProducts(this.brandIdSelected, this.typeIdSelected, this.sortSelected).subscribe(response =>{
     this.products = response.data;
   }, error =>{
     console.log(error);
@@ -53,4 +60,10 @@ onTypeSelected(typeId:number){
   this.typeIdSelected = typeId;
   this.getProduct();
 }
+
+onSortSelected(sort: string){
+  this.sortSelected = sort;
+  this.getProduct();
+}
+
 }
