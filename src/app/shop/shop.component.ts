@@ -59,10 +59,12 @@ getType(){
 
 onBrandSelected(brandId: number){
   this.shopParams.brandId = brandId;
+  this.shopParams.pageNumber=1;
   this.getProduct();
 }
 onTypeSelected(typeId:number){
   this.shopParams.typeId = typeId;
+  this.shopParams.pageNumber=1;
   this.getProduct();
 }
 
@@ -71,11 +73,15 @@ onSortSelected(sort: string){
   this.getProduct();
 }
 onPageChanged(event:any){
-  this.shopParams.pageNumber = event;
-  this.getProduct();
+  if(this.shopParams.pageNumber!==event){
+    this.shopParams.pageNumber = event;
+    this.getProduct();
+  }
+
 }
 onSearch(){
   this.shopParams.search = this.searchTerm.nativeElement.value;
+  this.shopParams.pageNumber=1;
   this.getProduct();
 }
 onReset(){
