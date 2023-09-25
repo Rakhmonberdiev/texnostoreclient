@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+    color: black;
+
+    &.active{
+        color: rgb(84, 95, 252);
+    }
+}
+logo{
+    cursor: pointer;
+
+    &:focus{
+        outline:none;
+    }
+}
