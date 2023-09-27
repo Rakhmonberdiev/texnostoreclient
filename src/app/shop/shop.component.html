@@ -18,16 +18,15 @@
         [value]="brand.id"
         (click) ="onBrandSelected(brand.id)"
         >{{brand.name}}</li>
-        <br/>
-        <h5 class="text-secondary ml-3">Товары</h5>
-        <ul class="list-group ml-3">
-            <li class="list-group-item" 
-            *ngFor="let type of types"
-            [class.active] = "type.id===this.shopParams.typeId"
-            [value]="type.id"
-            (click) ="onTypeSelected(type.id)"
-            >{{type.name}}</li>
-        </ul>
+      </ul>
+      <h5 class="text-secondary ml-3">Товары</h5>
+      <ul class="list-group ml-3">
+          <li class="list-group-item" 
+          *ngFor="let type of types"
+          [class.active] = "type.id===this.shopParams.typeId"
+          [value]="type.id"
+          (click) ="onTypeSelected(type.id)"
+          >{{type.name}}</li>
       </ul>
 </section>
 <section class="col-9">
