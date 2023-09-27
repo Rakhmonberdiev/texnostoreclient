@@ -6,11 +6,12 @@ import { TestErrorComponent } from './test-error/test-error.component';
 import { ServerErrorComponent } from './server-error/server-error.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ToastrModule } from 'ngx-toastr';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [NavBarComponent, TestErrorComponent, ServerErrorComponent, NotFoundComponent],
+  declarations: [NavBarComponent, TestErrorComponent, ServerErrorComponent, NotFoundComponent, FooterComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -19,6 +20,6 @@ import { ToastrModule } from 'ngx-toastr';
       preventDuplicates: true
     })
   ],
-  exports : [NavBarComponent]
+  exports : [NavBarComponent, FooterComponent ]
 })
 export class CoreModule { }
