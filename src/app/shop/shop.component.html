@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
 <section class="col-3">
-  <h5 class="text-secondary ml-3" >Сортировать</h5>
+  <h5 class="text-secondary mt-1" >Сортировать</h5>
 
   <select class="form-select" aria-label=".form-select-sm example" (change)="onSortSelected($event.target.value)">
     <option *ngFor="let sort of sortOptions" [value] = "sort.value">
@@ -10,8 +10,8 @@
 
   </select>
 <br/>
-    <h5 class="text-secondary ml-3">Бренды</h5>
-    <ul class="list-group ml-3">
+    <h5 class="text-secondary">Бренды</h5>
+    <ul class="list-group">
         <li class="list-group-item" 
         *ngFor="let brand of brands" 
         [class.active] = "brand.id===this.shopParams.brandId"
@@ -19,7 +19,7 @@
         (click) ="onBrandSelected(brand.id)"
         >{{brand.name}}</li>
       </ul>
-      <h5 class="text-secondary ml-3">Товары</h5>
+      <h5 class="text-secondary mt-4">Каталог товаров</h5>
       <ul class="list-group ml-3">
           <li class="list-group-item" 
           *ngFor="let type of types"
